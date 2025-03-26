@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useFetchCurrenciesAndRates } from '../../hooks/useFetchCurrenciesAndRates';
 
 import './index.css';
 
 export const CurrencyConverter = () => {
-  const [amount, setAmount] = React.useState(0);
-  const [fromCurrency, setFromCurrency] = React.useState('');
-  const [toCurrency, setToCurrency] = React.useState('');
-  const [result, setResult] = React.useState(0);
+  const [amount, setAmount] = useState(0);
+  const [fromCurrency, setFromCurrency] = useState('');
+  const [toCurrency, setToCurrency] = useState('');
+  const [result, setResult] = useState(0);
   const { error, currencies, rates } = useFetchCurrenciesAndRates();
 
   const handleAmountChange = (e) => {

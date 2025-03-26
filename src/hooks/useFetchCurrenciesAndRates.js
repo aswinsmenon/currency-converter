@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 
 export const useFetchCurrenciesAndRates = () => {
-  const [error, setError] = React.useState(false);
-  const [currencies, setCurrencies] = React.useState(null);
-  const [rates, setRates] = React.useState(null);
+  const [error, setError] = useState(false);
+  const [currencies, setCurrencies] = useState(null);
+  const [rates, setRates] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const getCurrencies = async () => {
       fetch(
         'https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies.json'
